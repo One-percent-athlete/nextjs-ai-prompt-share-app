@@ -27,6 +27,7 @@ const Nav = () => {
                 {isUserLoggedIn ? (
                     <div className="flex gap-3 md:gap-5">
                         <Link href="/create-prompt" className="black_btn">Create Post</Link>
+                        <button type="button" onClick={signOut} className="outline-btn">Sign Out</button>
                     </div>
                 ) : (
                     <></>
