@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+MongoDB_URI=""
+
 let isConnected = false
 
 export const connectToDB = async () => {
@@ -11,7 +13,7 @@ export const connectToDB = async () => {
     }
 
     try {
-        await mongoose.connect(MongoDBURI, {
+        await mongoose.connect(MongoDB_URI, {
             dbName: "share_prompt",
             useNewUrlParser: true,
             useUnifiedTopology: true,
