@@ -7,6 +7,9 @@ import { useRouters } from "@node_modules/next/navigation"
 import Form from "@components/form"
 
 const CreatePrompt = () => {
+    const router = useRouter()
+    const { data: session } = useSession()
+
     const [submitting, setSubmitting] = useState(false)
     const [post, usePost] = useState({
         prompt: "",
