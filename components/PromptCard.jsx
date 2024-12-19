@@ -5,6 +5,7 @@ import Image from "@node_modules/next/image"
 import { useSession } from "@node_modules/next-auth/react"
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
+    const [copied, setCopied] = useState("")
     return (
         <div className="prompt_card">
             <div className="flex justify-between items-start gap-5">
@@ -13,8 +14,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
                         alt="user_image"
                         width={40}
                         height={40}
-                        className="rounded-full object-contain"
-                    />
+                        className="rounded-full object-contain" />
                     <div className="flex flex-col">
                         <h3 className="font-satoshi font-semibold text-gray-900">
                             {post.creator.username}
@@ -24,7 +24,16 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
                         </p>
                     </div>
                 </div>
-
+                <div className="copy_btn" onClick={() => { }}>
+                    <Image
+                        src={copied === post.promt
+                            ? '/assets/icons/tick.svg'
+                            : '/assets/icons/copy.svg'
+                        }
+                        width={12}
+                        height={12}
+                    />
+                </div>
             </div>
         </div>
     )
