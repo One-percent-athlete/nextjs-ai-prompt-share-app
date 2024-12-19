@@ -1,8 +1,14 @@
-import React from 'react'
+"use client"
 
-const PromptCard = () => {
+import { useState } from 'react'
+import Image from "@node_modules/next/image"
+import { useSession } from "@node_modules/next-auth/react"
+
+const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     return (
-        <div>PromptCard</div>
+        <div className="prompt_card">
+            PromptCard
+        </div>
     )
 }
 
