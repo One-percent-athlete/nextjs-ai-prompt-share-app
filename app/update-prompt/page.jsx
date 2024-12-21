@@ -18,7 +18,11 @@ const EditPrompt = () => {
         tag: ""
     })
 
-    useEffect(() => { }, [promptId])
+    useEffect(() => {
+        const getPromptDetails = async () => {
+            const response = await fetch(`api/prompt/${promptId}`)
+        }
+    }, [promptId])
 
     const createPrompt = async (e) => {
         e.preventDefault()
