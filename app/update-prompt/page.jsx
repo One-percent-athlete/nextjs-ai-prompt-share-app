@@ -36,6 +36,8 @@ const EditPrompt = () => {
         e.preventDefault()
         setSubmitting(true)
 
+        if (!promptId) return alert('Prompt ID not found')
+
         try {
             const response = await fetch('/api/prompt/new', {
                 method: 'POST',
