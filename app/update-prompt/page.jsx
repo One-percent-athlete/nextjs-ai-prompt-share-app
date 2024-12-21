@@ -32,7 +32,7 @@ const EditPrompt = () => {
         if (promptId) getPromptDetails()
     }, [promptId])
 
-    const createPrompt = async (e) => {
+    const updatePrompt = async (e) => {
         e.preventDefault()
         setSubmitting(true)
 
@@ -56,11 +56,11 @@ const EditPrompt = () => {
     }
     return (
         <Form
-            type="Create"
+            type="Edit"
             post={post}
             setPost={post}
             submitting={submitting}
-            handleSubmit={createPrompt}
+            handleSubmit={updatePrompt}
         />
     )
 }
