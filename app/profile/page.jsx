@@ -36,7 +36,9 @@ const MyProfile = () => {
             try {
                 await fetch(`/api/prompt/${post._id.toString()}`, { method: "DELETE" })
 
-                const fillteredPosts = myPosts.filter((p) => p._id !== post._id)
+                const filteredPosts = myPosts.filter((p) => p._id !== post._id)
+
+                setPosts(filteredPosts)
             } catch (error) {
                 console.log(error);
 
